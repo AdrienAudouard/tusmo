@@ -7,10 +7,12 @@ import {
   useMemo,
   useState,
 } from 'react';
+
 import GameLettersState from '../models/game-letter-state.model';
 import GameLetterStatus from '../models/game-letter-status.model';
 import KeyboardLetterStatusModels from '../models/keyboard-letter-status.model';
 import KeyboardLettersState from '../models/keyboard-letters-state.model';
+
 import createTapKeyboardCallback from './callbacks/tap-keyboard.callback';
 
 type GameState = {

@@ -1,5 +1,6 @@
 import KeyboardLettersState from '../../../models/keyboard-letters-state.model';
 import KeyboardLine from '../keyboard-line/KeyboardLine';
+
 import KeyboardType from './keyboard-type';
 import './Keyboard.scss';
 
