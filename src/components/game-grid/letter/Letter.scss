@@ -1,0 +1,30 @@
+.letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #222f3e;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  opacity: 0.75;
+
+  @media only screen and (max-width: 600px) {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  &-correct {
+    background: #ee5253;
+  }
+
+  &-incorrect {
+    background: white;
+  }
+
+  &-incorrect_place {
+    background: #ff9f43;
+  }
+}

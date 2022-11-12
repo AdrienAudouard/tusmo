@@ -1,0 +1,71 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "airbnb",
+        "airbnb-typescript/base"
+    ],
+    "parserOptions": {
+       "project": "./tsconfig.json"
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "react/require-default-props": "off",
+        "@typescript-eslint/quotes": [
+            "error",
+            "single"
+        ],
+        "import/order": [
+            "warn",
+            {
+                "groups": [
+                    "type",
+                    "builtin",
+                    "external",
+                    "internal",
+                    "parent",
+                    "sibling",
+                    "index",
+                    "object"
+                ],
+                "newlines-between": "always",
+                "alphabetize": {
+                    "order": "asc"
+                }
+            }
+        ],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "": "never",
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": [
+                    "**/*.stories.*",
+                    "**/.storybook/**/*.*"
+                ],
+                "peerDependencies": true
+            }
+        ],
+        "quotes": [2, "single", { "avoidEscape": true }],
+        "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "no-duplicate-imports": "error",
+        "react/react-in-jsx-scope": "off"
+    }
+}

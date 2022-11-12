@@ -1,0 +1,29 @@
+.keyboard-letter {
+  font-size: 1.75rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 1rem;
+  }
+
+  &__correct {
+    color: #ee5253;
+  }
+
+  &__incorrect_place {
+    color: #ff9f43;
+  }
+
+  &__used {
+    color: #8395a7;
+  }
+
+  &__not-used {
+    color: white;
+  }
+}

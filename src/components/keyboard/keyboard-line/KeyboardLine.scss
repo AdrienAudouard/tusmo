@@ -1,0 +1,9 @@
+.keyboard-line {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+
+  @media only screen and (max-width: 600px) {
+    gap: 16px;
+  }
+}

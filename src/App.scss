@@ -1,0 +1,19 @@
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__background {
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &__router {
+    position: relative;
+    z-index: 1;
+  }
+}
