@@ -1,9 +1,11 @@
+@import "src/styles/media-query";
+
 .keyboard-line {
   display: flex;
   flex-direction: row;
   gap: 24px;
 
-  @media only screen and (max-width: 600px) {
+  @include phone-only {
     gap: 16px;
   }
 }

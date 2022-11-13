@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import './App.scss';
 import AppBackground from './components/app-background/AppBackground';
@@ -7,14 +8,16 @@ import Router from './components/router/Router';
 
 function App() {
   return (
-    <div className="app">
-      <Navbar className="app__navbar" />
-      <div className="app__router">
-        <Router />
+    <BrowserRouter>
+      <div className="app">
+        <Navbar className="app__navbar" />
+        <div className="app__router">
+          <Router />
+        </div>
+        <div />
+        <AppBackground className="app__background" />
       </div>
-      <div />
-      <AppBackground className="app__background" />
-    </div>
+    </BrowserRouter>
   );
 }
 

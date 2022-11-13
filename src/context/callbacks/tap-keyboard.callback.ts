@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { SetLinesAction } from '../../hooks/useLineStorage';
 import GameLettersState from '../../models/game-letter-state.model';
 import GameLetterStatus from '../../models/game-letter-status.model';
 
@@ -29,7 +28,7 @@ function createNextLine(line: GameLettersState[]): GameLettersState[] {
 function createTapKeyboardCallback(
   word: string,
   lines: GameLettersState[][],
-  setLines: React.Dispatch<React.SetStateAction<GameLettersState[][]>>,
+  setLines: SetLinesAction,
 ): (letter: string) => void {
   return (letter: string) => {
     const updatedLines = [...lines];

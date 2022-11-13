@@ -1,13 +1,16 @@
+@import "src/styles/media-query";
+
 .keyboard-letter {
   font-size: 1.75rem;
   font-weight: 600;
   background: none;
   border: none;
+  box-shadow: none;
   margin: 0;
   padding: 0;
   cursor: pointer;
 
-  @media only screen and (max-width: 600px) {
+  @include phone-only {
     font-size: 1rem;
   }
 

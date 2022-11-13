@@ -1,17 +1,17 @@
-import {
-  BrowserRouter, Navigate, Route, Routes,
-} from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 import HomePage from '../../pages/home/HomePage';
+import SettingsPage from '../../pages/settings/SettingsPage';
+
+import AppRoutes from './appRoutes';
 
 function Router() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<HomePage />} path="/" />
-        <Route element={<Navigate to="" />} path="*" />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route element={<HomePage />} path={AppRoutes.HOME} />
+      <Route element={<SettingsPage />} path={AppRoutes.SETTINGS} />
+      <Route element={<Navigate to={AppRoutes.HOME} />} path="*" />
+    </Routes>
   );
 }
 

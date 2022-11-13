@@ -1,10 +1,12 @@
+@import "src/styles/media-query";
+
 .keyboard {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
 
-  @media only screen and (max-width: 600px) {
+  @include phone-only {
     gap: 8px;
   }
 }

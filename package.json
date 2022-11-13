@@ -84,6 +84,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "gh-pages": "^4.0.0",
     "prop-types": "^15.8.1",
+    "read-file": "^0.2.0",
     "webpack": "^5.75.0"
   }
 }

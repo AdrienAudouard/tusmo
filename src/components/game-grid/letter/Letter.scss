@@ -1,3 +1,5 @@
+@import "src/styles/media-query";
+
 .letter {
   display: flex;
   align-items: center;
@@ -10,7 +12,7 @@
   font-weight: 500;
   opacity: 0.75;
 
-  @media only screen and (max-width: 600px) {
+  @include phone-only {
     width: 32px;
     height: 32px;
     border-radius: 8px;
