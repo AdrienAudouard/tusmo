@@ -1,3 +1,4 @@
+import Card from '../../components/card/Card';
 import GameBoard from '../../components/game-board/GameBoard';
 import GameProvider, { GameContext } from '../../context/game.context';
 import './HomePage.scss';
@@ -7,7 +8,29 @@ function HomePage() {
     <div className="home-page">
       <GameProvider>
         <GameContext.Consumer>
-          { ({ word, lines, keyboardLettersState }) => (
+          {
+            ({ result, score }) => {
+              if (result.isWon) {
+                return (
+                  <Card
+                    className="home-page__success_card"
+                    success
+                  >
+                    Félicitation ! Vous avez gagné avec un score de
+                    {' '}
+                    <b>{score}</b>
+                  </Card>
+                );
+              }
+
+              return <div />;
+            }
+          }
+        </GameContext.Consumer>
+        <GameContext.Consumer>
+          { ({
+            word, lines, keyboardLettersState,
+          }) => (
             <GameBoard
               wordSize={word?.length ?? 0}
               lines={lines}

@@ -14,15 +14,18 @@ import GameLettersState from '../models/game-letter-state.model';
 import GameLetterStatus from '../models/game-letter-status.model';
 import KeyboardLetterStatusModels from '../models/keyboard-letter-status.model';
 import KeyboardLettersState from '../models/keyboard-letters-state.model';
+import isGameWin from '../utils/game-utils';
+import Points from '../utils/points';
 
 import createTapKeyboardCallback from './callbacks/tap-keyboard.callback';
 
-type Result = {
+export type Result = {
   isWon: boolean; isLost: boolean
 };
 
 type GameState = {
   word: string | null;
+  score: number;
   result: Result;
   lines?: GameLettersState[][];
   keyboardLettersState: KeyboardLettersState;
@@ -33,19 +36,42 @@ export const GameContext = createContext({} as GameState);
 
 function GameProvider({ children }: PropsWithChildren) {
   const [word] = useWord();
+  const [score, setScore] = useState(0);
   const [lines, setLines] = useLineStorage(word);
   const [result, setResult] = useState<Result>({ isLost: false, isWon: false });
   const [keyboardLettersState, setKeyboardLetterState] = useState<KeyboardLettersState>({});
 
-  const tapKeyboard = useCallback(createTapKeyboardCallback(word ?? '', lines, setLines), [lines]);
+  const tapKeyboard = useCallback(createTapKeyboardCallback(
+    word ?? '',
+    lines,
+    setLines,
+    result,
+  ), [lines, result]);
 
   useEffect(() => {
-    const isWin = lines.find((line) => !line.find(
-      (element) => element.status !== GameLetterStatus.CORRECT,
-    )
-        && line.length === word.length)
-      != null;
+    const isWin = isGameWin(lines, word);
     setResult({ isWon: isWin, isLost: false });
+  }, [lines]);
+
+  useEffect(() => {
+    const toReduce = lines.map((line) => line.map((element) => {
+      if (element.letter === '') {
+        return 0;
+      }
+
+      if (element.status === GameLetterStatus.INCORRECT) {
+        return Points.MALLUS_INCORRECT;
+      }
+
+      if (element.status === GameLetterStatus.INCORRECT_PLACE) {
+        return Points.MALLUS_INCORRECT_PLACE;
+      }
+
+      return 0;
+    }).reduce<number>((a, b) => a + b, 0))
+      .reduce((a, b) => a + b, 0);
+
+    setScore(Points.MAX_SCORE - toReduce);
   }, [lines]);
 
   useEffect(() => {
@@ -80,7 +106,8 @@ function GameProvider({ children }: PropsWithChildren) {
     tapKeyboard,
     keyboardLettersState,
     result,
-  }), [word, lines, tapKeyboard, keyboardLettersState, result]);
+    score,
+  }), [word, lines, tapKeyboard, keyboardLettersState, result, score]);
 
   return (
     <GameContext.Provider value={contextValue}>{children}</GameContext.Provider>

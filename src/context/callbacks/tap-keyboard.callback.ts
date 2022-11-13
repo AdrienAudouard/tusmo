@@ -1,6 +1,8 @@
 import { SetLinesAction } from '../../hooks/useLineStorage';
 import GameLettersState from '../../models/game-letter-state.model';
 import GameLetterStatus from '../../models/game-letter-status.model';
+import isGameWin from '../../utils/game-utils';
+import { Result } from '../game.context';
 
 function updateLine(line: GameLettersState[], word: string): GameLettersState[] {
   const updatedLines = [...line];
@@ -29,8 +31,13 @@ function createTapKeyboardCallback(
   word: string,
   lines: GameLettersState[][],
   setLines: SetLinesAction,
+  result: Result,
 ): (letter: string) => void {
   return (letter: string) => {
+    if (result.isWon || result.isLost) {
+      return;
+    }
+
     const updatedLines = [...lines];
     const latestLine = updatedLines[updatedLines.length - 1];
 
@@ -47,7 +54,10 @@ function createTapKeyboardCallback(
       const updatedLastLine = updateLine(latestLine, word);
       updatedLines[updatedLines.length - 1] = updatedLastLine;
 
-      updatedLines.push(createNextLine(updatedLastLine));
+      if (!isGameWin(updatedLines, word)) {
+        updatedLines.push(createNextLine(updatedLastLine));
+      }
+
       setLines(updatedLines);
       return;
     }
