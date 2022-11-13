@@ -23,7 +23,6 @@ function useLocalStorage<T>(key: string, initialValue: T) {
           window.localStorage.setItem(key, JSON.stringify(valueToStore));
         }
       } catch (error) {
-        console.error(error);
       }
     },
     [key, storedValue],
