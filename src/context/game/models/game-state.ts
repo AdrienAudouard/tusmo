@@ -1,5 +1,5 @@
-import GameLettersState from '../../models/game-letter-state.model';
-import KeyboardLettersState from '../../models/keyboard-letters-state.model';
+import GameLettersState from '@models/game-letter-state.model';
+import KeyboardLettersState from '@models/keyboard-letters-state.model';
 
 import { Result } from './result';
 

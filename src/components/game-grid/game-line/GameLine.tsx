@@ -1,6 +1,6 @@
-import GameLettersState from '../../../models/game-letter-state.model';
-import GameLetterStatus from '../../../models/game-letter-status.model';
-import Letter from '../letter/Letter';
+import Letter from '@components/game-grid/letter/Letter';
+import GameLettersState from '@models/game-letter-state.model';
+import GameLetterStatus from '@models/game-letter-status.model';
 import './GameLine.scss';
 
 interface Props {

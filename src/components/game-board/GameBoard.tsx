@@ -1,8 +1,7 @@
-import GameLettersState from '../../models/game-letter-state.model';
-import KeyboardLettersState from '../../models/keyboard-letters-state.model';
-import GameGrid from '../game-grid/game-grid/GameGrid';
-import Keyboard from '../keyboard/keyboard/Keyboard';
-import './GameBoard.scss';
+import GameGrid from '@components/game-grid/game-grid/GameGrid';
+import Keyboard from '@components/keyboard/keyboard/Keyboard';
+import GameLettersState from '@models/game-letter-state.model';
+import KeyboardLettersState from '@models/keyboard-letters-state.model';
 
 interface Props {
   wordSize: number;

@@ -1,5 +1,5 @@
-import GameLettersState from '../../../models/game-letter-state.model';
-import GameLine from '../game-line/GameLine';
+import GameLine from '@components/game-grid/game-line/GameLine';
+import GameLettersState from '@models/game-letter-state.model';
 import './GameGrid.scss';
 
 interface Props {

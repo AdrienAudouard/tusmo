@@ -1,5 +1,5 @@
+import GameLetterStatus from '@models/game-letter-status.model';
 import './Letter.scss';
-import GameLetterStatus from '../../../models/game-letter-status.model';
 
 export interface Props {
   letter?: string;

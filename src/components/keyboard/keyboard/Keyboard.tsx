@@ -1,4 +1,5 @@
-import { useGame } from '../../../context';
+import { useGame } from '@context/game';
+
 import useKeyboard from '../../../hooks/useKeyboard';
 import KeyboardLettersState from '../../../models/keyboard-letters-state.model';
 import KeyboardLine from '../keyboard-line/KeyboardLine';

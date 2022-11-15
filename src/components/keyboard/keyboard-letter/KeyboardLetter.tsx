@@ -1,4 +1,5 @@
-import { useGame } from '../../../context';
+import { useGame } from '@context/game';
+
 import KeyboardLetterStatusModels from '../../../models/keyboard-letter-status.model';
 import './KeyboardLetter.scss';
 

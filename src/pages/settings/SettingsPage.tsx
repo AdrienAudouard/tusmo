@@ -1,9 +1,10 @@
 import React from 'react';
 import { SlSettings } from 'react-icons/sl';
 
-import Card from '../../components/card/Card';
-import Select from '../../components/select/Select';
-import SettingsLine from '../../components/settings-line/SettingsLine';
+import Card from '@components/card/Card';
+import Select from '@components/select/Select';
+import SettingsLine from '@components/settings-line/SettingsLine';
+
 import './SettingsPage.scss';
 
 function SettingsPage() {

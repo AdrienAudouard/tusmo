@@ -1,6 +1,6 @@
-import Card from '../../components/card/Card';
-import GameBoard from '../../components/game-board/GameBoard';
-import GameProvider, { GameContext } from '../../context/game.context';
+import Card from '@components/card/Card';
+import GameBoard from '@components/game-board/GameBoard';
+import GameProvider, { GameContext } from '@context/game/game.context';
 import './HomePage.scss';
 
 function HomePage() {

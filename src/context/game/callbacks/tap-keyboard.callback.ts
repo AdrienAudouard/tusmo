@@ -1,9 +1,9 @@
 import { SetLinesAction } from '@hooks/useLineStorage';
+import GameLettersState from '@models/game-letter-state.model';
+import GameLetterStatus from '@models/game-letter-status.model';
 import isGameWin from '@utils/game-utils';
+import ALLOWED_LETTERS from '@utils/keyboard-utils';
 
-import GameLettersState from '../../models/game-letter-state.model';
-import GameLetterStatus from '../../models/game-letter-status.model';
-import ALLOWED_LETTERS from '../../utils/keyboard-utils';
 import { Result } from '../models/result';
 
 function updateLine(line: GameLettersState[], word: string): GameLettersState[] {

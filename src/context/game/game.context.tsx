@@ -8,13 +8,13 @@ import {
   useState,
 } from 'react';
 
-import useLineStorage from '../hooks/useLineStorage';
-import useWord from '../hooks/useWord';
-import GameLetterStatus from '../models/game-letter-status.model';
-import KeyboardLetterStatusModels from '../models/keyboard-letter-status.model';
-import KeyboardLettersState from '../models/keyboard-letters-state.model';
-import isGameWin from '../utils/game-utils';
-import Points from '../utils/points';
+import useLineStorage from '@hooks/useLineStorage';
+import useWord from '@hooks/useWord';
+import GameLetterStatus from '@models/game-letter-status.model';
+import KeyboardLetterStatusModels from '@models/keyboard-letter-status.model';
+import KeyboardLettersState from '@models/keyboard-letters-state.model';
+import isGameWin from '@utils/game-utils';
+import Points from '@utils/points';
 
 import createTapKeyboardCallback from './callbacks/tap-keyboard.callback';
 import { GameState } from './models/game-state';

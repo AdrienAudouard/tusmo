@@ -18,36 +18,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "baseUrl": "./",
-    "paths": {
-      "@assets/*" : [
-        "src/assets/*"
-      ],
-      "@components/*" : [
-        "src/components/*"
-      ],
-      "@context/*" : [
-        "src/context/*"
-      ],
-      "@hooks/*" : [
-        "src/hooks/*"
-      ],
-      "@models/*" : [
-        "src/models/*"
-      ],
-      "@pages/*" : [
-        "src/pages/*"
-      ],
-      "@styles/*" : [
-        "src/styles/*"
-      ],
-      "@utils/*" : [
-        "src/utils/*"
-      ]
-    }
+    "jsx": "react-jsx"
   },
   "include": [
     "src"
   ],
+  "extends": "./tsconfig.paths.json"
 }
