@@ -6,7 +6,7 @@ interface Props {
   success?: boolean;
 }
 
-export function Card({ children, className, success }: PropsWithChildren & Props) {
+function Card({ children, className, success }: PropsWithChildren & Props) {
   return <div className={`card ${className} card__${success ? 'success' : ''}`}>{children}</div>;
 }
 

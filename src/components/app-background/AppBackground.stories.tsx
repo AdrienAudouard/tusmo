@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
+
 import AppBackground from './AppBackground';
 
 export default {

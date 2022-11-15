@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-import { base64ToUtf8, utf8ToBase64 } from '../utils/encoding';
+import { base64ToUtf8, utf8ToBase64 } from '@utils/encoding';
 
 function useLocalStorage<T>(key: string, initialValue: T, isEncoded = false) {
   const [storedValue, setStoredValue] = useState(() => {
@@ -31,7 +31,7 @@ function useLocalStorage<T>(key: string, initialValue: T, isEncoded = false) {
         /// To manage
       }
     },
-    [key, storedValue],
+    [key, storedValue, isEncoded],
   );
 
   return [storedValue, setValue];

@@ -19,7 +19,7 @@ function useKeyboard(listener: (key: KeyboardEvent) => void, element = window) {
         element.removeEventListener('keydown', eventListener);
       };
     },
-    [listener], // Re-run if eventName or element changes
+    [listener, element], // Re-run if eventName or element changes
   );
 }
 

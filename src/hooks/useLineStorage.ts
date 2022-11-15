@@ -32,7 +32,7 @@ function useLineStorage(
     newStored[word] = lines;
 
     setStoredLines(newStored);
-  }, [storedLines, word]);
+  }, [storedLines, word, setStoredLines]);
 
   return [storedLines[word], setValue];
 }
