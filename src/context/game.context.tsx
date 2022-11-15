@@ -85,10 +85,12 @@ function GameProvider({ children }: PropsWithChildren) {
 
         if (element.status === GameLetterStatus.CORRECT) {
           keyboardState[element.letter] = KeyboardLetterStatusModels.CORRECT;
+          return;
         }
 
         if (element.status === GameLetterStatus.INCORRECT_PLACE) {
           keyboardState[element.letter] = KeyboardLetterStatusModels.INCORRECT_PLACE;
+          return;
         }
 
         if (line.length === word?.length && lineIndex !== (lines.length - 1)) {

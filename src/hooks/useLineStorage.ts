@@ -20,7 +20,7 @@ function useLineStorage(
       status: GameLetterStatus.CORRECT,
     }]],
   };
-  const [storedLines, setStoredLines] = useLocalStorage<StoredLines>('lines', initial);
+  const [storedLines, setStoredLines] = useLocalStorage<StoredLines>('lines', initial, true);
 
   if (!storedLines[word]) {
     storedLines[word] = initial[word];
