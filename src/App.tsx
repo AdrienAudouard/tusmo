@@ -8,7 +8,7 @@ import Router from './components/router/Router';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="tusmo">
       <div className="app">
         <Navbar className="app__navbar" />
         <div className="app__router">

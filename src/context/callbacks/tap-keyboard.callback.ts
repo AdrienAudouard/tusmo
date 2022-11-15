@@ -2,7 +2,8 @@ import { SetLinesAction } from '../../hooks/useLineStorage';
 import GameLettersState from '../../models/game-letter-state.model';
 import GameLetterStatus from '../../models/game-letter-status.model';
 import isGameWin from '../../utils/game-utils';
-import { Result } from '../game.context';
+import ALLOWED_LETTERS from '../../utils/keyboard-utils';
+import { Result } from '../models/result';
 
 function updateLine(line: GameLettersState[], word: string): GameLettersState[] {
   const updatedLines = [...line];
@@ -46,7 +47,7 @@ function createTapKeyboardCallback(
      */
     const lineContainEmpty = latestLine.find((element) => element.letter === '') != null;
 
-    if (letter === 'ENTRER') {
+    if (letter === 'ENTRER' || letter === 'ENTER') {
       if (latestLine.length !== word?.length || lineContainEmpty) {
         return;
       }
@@ -62,7 +63,7 @@ function createTapKeyboardCallback(
       return;
     }
 
-    if (letter === 'SUPPR') {
+    if (letter === 'SUPPR' || letter === 'BACKSPACE') {
       if (latestLine.length === 1) {
         return;
       }
@@ -81,7 +82,8 @@ function createTapKeyboardCallback(
       return;
     }
 
-    if (latestLine.length === word?.length && !lineContainEmpty) {
+    const allowedLetter = ALLOWED_LETTERS.includes(letter);
+    if ((latestLine.length === word?.length && !lineContainEmpty) || !allowedLetter) {
       return;
     }
 

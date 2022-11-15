@@ -10,7 +10,6 @@ import {
 
 import useLineStorage from '../hooks/useLineStorage';
 import useWord from '../hooks/useWord';
-import GameLettersState from '../models/game-letter-state.model';
 import GameLetterStatus from '../models/game-letter-status.model';
 import KeyboardLetterStatusModels from '../models/keyboard-letter-status.model';
 import KeyboardLettersState from '../models/keyboard-letters-state.model';
@@ -18,19 +17,8 @@ import isGameWin from '../utils/game-utils';
 import Points from '../utils/points';
 
 import createTapKeyboardCallback from './callbacks/tap-keyboard.callback';
-
-export type Result = {
-  isWon: boolean; isLost: boolean
-};
-
-type GameState = {
-  word: string | null;
-  score: number;
-  result: Result;
-  lines?: GameLettersState[][];
-  keyboardLettersState: KeyboardLettersState;
-  tapKeyboard: (letter: string) => void;
-};
+import { GameState } from './models/game-state';
+import { Result } from './models/result';
 
 export const GameContext = createContext({} as GameState);
 
@@ -51,7 +39,7 @@ function GameProvider({ children }: PropsWithChildren) {
   useEffect(() => {
     const isWin = isGameWin(lines, word);
     setResult({ isWon: isWin, isLost: false });
-  }, [lines]);
+  }, [lines, word]);
 
   useEffect(() => {
     const toReduce = lines.map((line) => line.map((element) => {

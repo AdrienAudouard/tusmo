@@ -1,3 +1,5 @@
+import { useGame } from '../../../context';
+import useKeyboard from '../../../hooks/useKeyboard';
 import KeyboardLettersState from '../../../models/keyboard-letters-state.model';
 import KeyboardLine from '../keyboard-line/KeyboardLine';
 
@@ -23,6 +25,11 @@ interface Props {
 
 function Keyboard({ lettersState = {}, keyboardType = KeyboardType.AZERTY } : Props) {
   const letters = keyboardType === KeyboardType.AZERTY ? azertyLetters : qwertyLetters;
+  const gameState = useGame();
+
+  useKeyboard((key: KeyboardEvent) => {
+    gameState.tapKeyboard(key.key.toUpperCase());
+  });
 
   return (
     <span className="keyboard">
