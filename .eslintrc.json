@@ -74,6 +74,9 @@
         "quotes": [2, "single", { "avoidEscape": true }],
         "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
         "no-duplicate-imports": "error",
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-no-useless-fragment": [
+            "warn", {"allowExpressions":  true}
+        ]
     }
 }
