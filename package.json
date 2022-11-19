@@ -5,7 +5,7 @@
   "homepage": "https://AdrienAudouard.github.io/tusmo",
   "scripts": {
     "start": "craco start",
-    "build": "react-scripts build",
+    "build": "craco build",
     "lint": "eslint '**/*.{ts,tsx}'",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
