@@ -2,6 +2,7 @@
 
 import { initializeApp } from 'firebase/app';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { BrowserRouter } from 'react-router-dom';
 
 import LocationAnalytics from '@components/location-analytics/location-analytics';
@@ -26,20 +27,28 @@ initializeApp(firebaseConfig);
 
 function App() {
   return (
-    <UserInformationsProvider>
-      <BrowserRouter basename="tusmo">
-        <LocationAnalytics>
-          <div className="app">
-            <Navbar className="app__navbar" />
-            <div className="app__router">
-              <Router />
+    <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Tusmo</title>
+        <link rel="canonical" href="https://adrienaudouard.github.io/tusmo" />
+        <meta name="google-site-verification" content="UvRyhvX-6k7fPc70wzX6pKjiroBrlB-XO045miLvhxA" />
+      </Helmet>
+      <UserInformationsProvider>
+        <BrowserRouter basename="tusmo">
+          <LocationAnalytics>
+            <div className="app">
+              <Navbar className="app__navbar" />
+              <div className="app__router">
+                <Router />
+              </div>
+              <div />
+              <AppBackground className="app__background" />
             </div>
-            <div />
-            <AppBackground className="app__background" />
-          </div>
-        </LocationAnalytics>
-      </BrowserRouter>
-    </UserInformationsProvider>
+          </LocationAnalytics>
+        </BrowserRouter>
+      </UserInformationsProvider>
+    </div>
   );
 }
 
