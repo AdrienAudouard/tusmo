@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/tusmo/static/css/main.d4feadef.css",
-    "main.js": "/tusmo/static/js/main.a62dd04c.js",
+    "main.js": "/tusmo/static/js/main.14755936.js",
     "static/js/787.894ea5c1.chunk.js": "/tusmo/static/js/787.894ea5c1.chunk.js",
     "static/media/img_1.png": "/tusmo/static/media/img_1.1b10fc41c8964577cc43.png",
     "static/media/logo.png": "/tusmo/static/media/logo.afa89804e460885f153c.png",
     "index.html": "/tusmo/index.html",
     "main.d4feadef.css.map": "/tusmo/static/css/main.d4feadef.css.map",
-    "main.a62dd04c.js.map": "/tusmo/static/js/main.a62dd04c.js.map",
+    "main.14755936.js.map": "/tusmo/static/js/main.14755936.js.map",
     "787.894ea5c1.chunk.js.map": "/tusmo/static/js/787.894ea5c1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d4feadef.css",
-    "static/js/main.a62dd04c.js"
+    "static/js/main.14755936.js"
   ]
 }
