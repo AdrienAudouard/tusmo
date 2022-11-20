@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/tusmo/static/css/main.54f3e899.css",
-    "main.js": "/tusmo/static/js/main.c161eb05.js",
+    "main.css": "/tusmo/static/css/main.f5ed70e7.css",
+    "main.js": "/tusmo/static/js/main.6e59d84a.js",
     "static/js/787.894ea5c1.chunk.js": "/tusmo/static/js/787.894ea5c1.chunk.js",
-    "static/media/img_1.png": "/tusmo/static/media/img_1.eb6184345fbe1906a50e.png",
+    "static/media/img_1.png": "/tusmo/static/media/img_1.1b10fc41c8964577cc43.png",
     "static/media/logo.png": "/tusmo/static/media/logo.afa89804e460885f153c.png",
     "index.html": "/tusmo/index.html",
-    "main.54f3e899.css.map": "/tusmo/static/css/main.54f3e899.css.map",
-    "main.c161eb05.js.map": "/tusmo/static/js/main.c161eb05.js.map",
+    "main.f5ed70e7.css.map": "/tusmo/static/css/main.f5ed70e7.css.map",
+    "main.6e59d84a.js.map": "/tusmo/static/js/main.6e59d84a.js.map",
     "787.894ea5c1.chunk.js.map": "/tusmo/static/js/787.894ea5c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.54f3e899.css",
-    "static/js/main.c161eb05.js"
+    "static/css/main.f5ed70e7.css",
+    "static/js/main.6e59d84a.js"
   ]
 }
