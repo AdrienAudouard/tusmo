@@ -8,7 +8,6 @@ function LocationAnalytics({ children }: PropsWithChildren) {
 
   useEffect(() => {
     tagPageView(location.pathname);
-    console.log(location);
   }, [location]);
 
   return <>{children}</>;
