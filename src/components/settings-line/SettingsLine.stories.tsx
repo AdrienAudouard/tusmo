@@ -2,6 +2,8 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 import { SlSettings } from 'react-icons/sl';
 
+import KeyboardType from '@components/keyboard/keyboard/keyboard-type';
+
 import Card from '../card/Card';
 import Select from '../select/Select';
 
@@ -28,7 +30,7 @@ export const Default: ComponentStory<typeof SettingsLine> = function () {
       icon={<SlSettings />}
       title="Keyboard"
       description="Select the type of keyboard you want"
-      action={<Select />}
+      action={<Select values={[KeyboardType.AZERTY, KeyboardType.QWERTY]} />}
     />
   );
 };

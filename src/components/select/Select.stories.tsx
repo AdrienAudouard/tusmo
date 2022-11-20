@@ -1,6 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
+import KeyboardType from '@components/keyboard/keyboard/keyboard-type';
+
 import Select from './Select';
 
 export default {
@@ -9,5 +11,5 @@ export default {
 } as ComponentMeta<typeof Select>;
 
 export const Default: ComponentStory<typeof Select> = function () {
-  return <Select />;
+  return <Select values={[KeyboardType.AZERTY, KeyboardType.QWERTY]} />;
 };

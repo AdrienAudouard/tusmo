@@ -2,14 +2,22 @@ import React from 'react';
 import { SlSettings } from 'react-icons/sl';
 
 import Card from '@components/card/Card';
+import KeyboardType from '@components/keyboard/keyboard/keyboard-type';
 import Select from '@components/select/Select';
 import SettingsLine from '@components/settings-line/SettingsLine';
+import { useUserPreferences } from '@context/user-preferences/user-preferences.context';
 
 import './SettingsPage.scss';
 
 function SettingsPage() {
+  const { keyboardType, setKeyboardType } = useUserPreferences();
+
   const clearLines = () => {
     window.localStorage.removeItem('lines');
+  };
+
+  const onKeyboardTypeChange = (value: string) => {
+    setKeyboardType(value);
   };
 
   return (
@@ -20,7 +28,13 @@ function SettingsPage() {
           icon={<SlSettings />}
           title="Keyboard"
           description="Select the type of keyboard you want"
-          action={<Select />}
+          action={(
+            <Select
+              values={[KeyboardType.AZERTY, KeyboardType.QWERTY]}
+              selected={keyboardType}
+              onChange={onKeyboardTypeChange}
+            />
+)}
         />
 
         <SettingsLine

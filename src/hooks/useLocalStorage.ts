@@ -32,7 +32,7 @@ function useLocalStorage<T>(key: string, initialValue: T, isEncoded = false) {
       try {
         const valueToStore = value instanceof Function ? value(storedValue) : value;
         const toStore = getValueToStore(valueToStore, isEncoded);
-        setStoredValue(toStore);
+        setStoredValue(valueToStore);
         if (typeof window !== 'undefined') {
           window.localStorage.setItem(key, toStore);
         }
