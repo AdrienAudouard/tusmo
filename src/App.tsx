@@ -1,5 +1,3 @@
-// Import the functions you need from the SDKs you need
-
 import { initializeApp } from 'firebase/app';
 import React from 'react';
 import { Helmet } from 'react-helmet';
@@ -27,7 +25,7 @@ initializeApp(firebaseConfig);
 
 function App() {
   return (
-    <div>
+    <>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Tusmo</title>
@@ -48,7 +46,7 @@ function App() {
           </LocationAnalytics>
         </BrowserRouter>
       </UserInformationsProvider>
-    </div>
+    </>
   );
 }
 
