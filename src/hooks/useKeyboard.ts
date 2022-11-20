@@ -9,7 +9,13 @@ function useKeyboard(listener: (key: KeyboardEvent) => void, element = window) {
       if (!isSupported) return () => {};
 
       // Create event listener that calls handler function stored in ref
-      const eventListener = (event: KeyboardEvent) => listener(event);
+      const eventListener = (event: KeyboardEvent) => {
+        if (event.altKey || event.ctrlKey || event.shiftKey || event.metaKey) {
+          return;
+        }
+
+        listener(event);
+      };
 
       // Add event listener
       element.addEventListener('keydown', eventListener);
