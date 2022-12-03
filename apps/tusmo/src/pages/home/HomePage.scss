@@ -1,0 +1,11 @@
+.home-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 32px;
+
+  &__success_card {
+    padding: 16px;
+  }
+}

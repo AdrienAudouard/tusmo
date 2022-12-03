@@ -1,3 +1,0 @@
-@mixin phone-only {
-  @media (max-width: 600px) { @content; }
-}

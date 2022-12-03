@@ -1,0 +1,49 @@
+{
+  "name": "tusmo",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://AdrienAudouard.github.io/tusmo",
+  "scripts": {
+    "start": "craco start",
+    "build": "cross-env BUILD_PATH=../../dist/apps/tusmo craco build",
+    "lint": "eslint '**/*.{ts,tsx}'",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
+    "serve": "npm start"
+  },
+  "dependencies": {},
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+  }
+}

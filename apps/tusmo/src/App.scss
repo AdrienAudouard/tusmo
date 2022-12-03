@@ -1,0 +1,25 @@
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+
+  &__background {
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &__navbar {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__router {
+    position: relative;
+    z-index: 1;
+  }
+}
