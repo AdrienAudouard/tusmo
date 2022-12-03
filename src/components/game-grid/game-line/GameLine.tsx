@@ -17,6 +17,7 @@ function GameLine({ size, letters = [] }: Props) {
         key={`${index}-${letter}-${status}`}
         letter={letter}
         status={status}
+        index={index}
       />
     );
   });
