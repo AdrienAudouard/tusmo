@@ -14,11 +14,11 @@ describe('WordsService', () => {
 
   describe('getWordOfTheDay', () => {
     it('should return the word of the day', () => {
-      jest.useFakeTimers({ now: Date.UTC(2020, 2, 1) });
+      jest.useFakeTimers({ now: Date.UTC(2020, 2, 1, 0, 0, 0, 0) });
       ///   jest.setSystemTime(new Date(2020, 3, 1));
 
       const word = wordsService.getWordOfTheDay();
-      expect(word).toEqual('EXCUSER');
+      expect(word).toEqual('RAGEUSES');
     });
   });
 

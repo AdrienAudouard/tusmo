@@ -17,7 +17,7 @@ export class WordsService {
 
   public getWordOfTheDay(): string {
     const now = new Date();
-    const wordDate = new Date(
+    const wordDate = Date.UTC(
       now.getUTCFullYear(),
       now.getUTCMonth(),
       now.getUTCDay(),
@@ -29,7 +29,7 @@ export class WordsService {
 
     console.log(wordDate);
 
-    const wordIndex = wordDate.getTime() % this.importedWords.length;
+    const wordIndex = wordDate % this.importedWords.length;
     const word = this.importedWords[wordIndex];
 
     return word.word;
