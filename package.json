@@ -4,9 +4,11 @@
   "license": "MIT",
   "scripts": {
     "start": "ls && node dist/apps/back-end/main.js",
-    "build": "nx build back-end --prod && ls",
+    "build": "npm run build:front && npm run build:back",
+    "build:front": "nx build tusmo --prod",
+    "build:back": "nx build back-end --prod",
     "test": "nx test",
-    "heroku-postbuild": "nx build back-end --prod"
+    "heroku-postbuild": "npm run build"
   },
   "private": true,
   "dependencies": {

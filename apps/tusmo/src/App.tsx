@@ -30,11 +30,14 @@ function App() {
         <meta charSet="utf-8" />
         <title>Tusmo</title>
         <link rel="canonical" href="https://adrienaudouard.github.io/tusmo" />
-        <meta name="google-site-verification" content="UvRyhvX-6k7fPc70wzX6pKjiroBrlB-XO045miLvhxA" />
+        <meta
+          name="google-site-verification"
+          content="UvRyhvX-6k7fPc70wzX6pKjiroBrlB-XO045miLvhxA"
+        />
       </Helmet>
       <UserPreferencesProvider>
         <UserInformationsProvider>
-          <BrowserRouter basename="tusmo">
+          <BrowserRouter>
             <LocationAnalytics>
               <div className="app">
                 <Navbar className="app__navbar" />

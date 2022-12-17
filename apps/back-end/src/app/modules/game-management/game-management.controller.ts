@@ -8,7 +8,7 @@ import { CreateGameEventDto } from './dto/create-game-event.dto';
 import { CreateGameDto } from './dto/create-game.dto';
 
 @ApiTags('game-management')
-@Controller('game-management')
+@Controller('api/game-management')
 export class GameManagementController {
   constructor(
     private sharedGamesService: SharedGamesService,
