@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "node dist/apps/back-end/main.js",
+    "start": "ls && node dist/apps/back-end/main.js",
     "build": "nx build back-end --prod",
     "test": "nx test",
     "heroku-postbuild": "echo Skip build on Heroku"
