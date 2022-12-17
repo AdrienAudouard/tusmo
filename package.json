@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "ls && node dist/apps/back-end/main.js",
-    "build": "nx build back-end --prod",
+    "build": "nx build back-end --prod && ls",
     "test": "nx test",
     "heroku-postbuild": "echo Skip build on Heroku"
   },
