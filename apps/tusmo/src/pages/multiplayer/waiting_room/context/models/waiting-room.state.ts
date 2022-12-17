@@ -6,4 +6,6 @@ export type WaitingRoomState = {
   selectedGame?: GameModel;
   createGame: (name: string) => void;
   joinGame: (code: string) => void;
+
+  socketId: string;
 };

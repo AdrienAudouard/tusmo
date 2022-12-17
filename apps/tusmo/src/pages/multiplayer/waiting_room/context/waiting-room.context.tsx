@@ -17,24 +17,29 @@ export const WaitingRoomContext = createContext<WaitingRoomState>({
   games: [],
   createGame: () => {},
   joinGame: () => {},
+  socketId: '',
 });
 
 const socket = io(ENV.websocketUrl);
 
 export function WaitingRoomProvider({ children }: PropsWithChildren) {
   const [games, setGames] = useState<GameModel[]>([]);
+  const [socketId, setSocketId] = useState('');
   const [selectedGame, setSelectedGame] = useState<GameModel | undefined>(
     undefined
   );
+
   const [gameManagementApi] = useState(() => new GameManagementApi());
 
   useEffect(() => {
+    setSocketId(socket.id);
     socket.on('connect', () => {
       console.log('connected');
     });
 
     socket.on(EventsEnum.GAME_LIST_UPDATE, (games: GameModel[]) => {
       console.log(games);
+      console.log(socket.id);
       setGames(games);
     });
 
@@ -81,8 +86,9 @@ export function WaitingRoomProvider({ children }: PropsWithChildren) {
       createGame,
       selectedGame,
       joinGame,
+      socketId,
     }),
-    [games, createGame, selectedGame, joinGame]
+    [games, createGame, selectedGame, joinGame, socketId]
   );
 
   return (

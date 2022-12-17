@@ -15,7 +15,7 @@ export function GameList() {
               <GameListItem
                 game={game}
                 key={`item-${game.code}`}
-                enableButton={selectedGame !== undefined}
+                enableButton={selectedGame === undefined}
               />
             ))}
           </ul>
