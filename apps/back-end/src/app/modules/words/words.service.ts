@@ -18,9 +18,9 @@ export class WordsService {
   public getWordOfTheDay(): string {
     const now = new Date();
     const wordDate = new Date(
-      now.getFullYear(),
-      now.getMonth(),
-      now.getDay(),
+      now.getUTCFullYear(),
+      now.getUTCMonth(),
+      now.getUTCDay(),
       0,
       0,
       0,
