@@ -14,7 +14,9 @@ interface Props {
 function Navbar({ className }: Props) {
   return (
     <div className={`navbar ${className ?? ''}`}>
-      <div />
+      <Link to={AppRoutes.MULTIPLAYER_WAITING_ROOM}
+            className={'navbar__text-item'}>Multiplayer
+      </Link>
       <Link to={AppRoutes.HOME}><img className="navbar__logo" src={logo} alt="Logo" /></Link>
       <Link to={AppRoutes.SETTINGS}><SlSettings size={24} color="white" /></Link>
     </div>

@@ -1,0 +1,14 @@
+.game-joined {
+  flex: 1;
+
+  h1 {
+    padding-bottom: 16px;
+  }
+
+  &__action-container {
+    padding-top: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
