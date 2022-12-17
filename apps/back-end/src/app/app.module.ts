@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { EventEmitterModule } from '@nestjs/event-emitter';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -7,8 +8,9 @@ import { GameModule } from './modules/game/game.module';
 import { SharedGamesService } from './shared/shared-games.service';
 
 @Module({
-  imports: [GameModule, GameManagementModule, ],
+  imports: [GameModule, GameManagementModule, EventEmitterModule.forRoot()],
   controllers: [AppController],
-  providers: [AppService, SharedGamesService],
+  providers: [AppService, SharedGamesService]
 })
-export class AppModule {}
+export class AppModule {
+}

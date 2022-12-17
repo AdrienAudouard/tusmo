@@ -1,0 +1,9 @@
+.game-list {
+  flex: 1;
+
+  &__list {
+    max-height: 50vh;
+    overflow: scroll;
+    padding: 8px;
+  }
+}
