@@ -27,8 +27,6 @@ export class WordsService {
       0
     );
 
-    console.log(wordDate);
-
     const wordIndex = wordDate % this.importedWords.length;
     const word = this.importedWords[wordIndex];
 
